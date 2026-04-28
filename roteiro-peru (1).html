@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peru · 29 Set – 11 Out</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #fafaf9;
+    --bg-card: #ffffff;
+    --border: #e8e6e1;
+    --border-strong: #d4d1ca;
+    --text: #1a1a1a;
+    --text-soft: #5e5b54;
+    --text-muted: #8a877f;
+    --accent: #c4543a;
+    --accent-soft: #fef3ef;
+    --accent-deep: #9c3e26;
+    --green: #4a7c59;
+    --green-soft: #eaf2ec;
+    --blue: #3b5c8c;
+    --blue-soft: #ecf0f7;
+    --yellow: #c89a3c;
+    --yellow-soft: #faf3e0;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow: 0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
+    --radius-sm: 8px;
+    --radius: 12px;
+    --radius-lg: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+  }
+
+  .serif { font-family: 'Instrument Serif', serif; font-weight: 400; }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-brand-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .nav-links { display: flex; gap: 4px; }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-soft);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.15s;
+  }
+
+  .nav-links a:hover {
+    background: var(--bg-soft);
+    color: var(--text);
+  }
+
+  /* HEADER */
+  .header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 32px 60px;
+  }
+
+  .header-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .header-tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .header h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+
+  .header h1 em { color: var(--accent); }
+
+  .header-sub {
+    font-size: 19px;
+    color: var(--text-soft);
+    max-width: 620px;
+    line-height: 1.55;
+  }
+
+  /* QUICK FACTS */
+  .facts {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .fact {
+    padding: 24px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.2s;
+  }
+
+  .fact:hover {
+    background: var(--bg-card);
+    box-shadow: var(--shadow);
+    border-color: var(--border-strong);
+  }
+
+  .fact-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 12px;
+    color: var(--text-soft);
+  }
+
+  .fact-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .fact-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--text);
+  }
+
+  /* SECTION */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 32px;
+  }
+
+  .section-head { margin-bottom: 40px; }
+
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  .section-title em { color: var(--accent); }
+
+  .section-desc {
+    font-size: 17px;
+    color: var(--text-soft);
+    max-width: 600px;
+    line-height: 1.55;
+  }
+
+  /* TABS DOS DIAS */
+  .tabs-wrap {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 8px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 4px;
+    min-width: max-content;
+  }
+
+  .tab {
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-soft);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.15s;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 64px;
+  }
+
+  .tab-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+    color: var(--text);
+  }
+
+  .tab-date {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .tab:hover { background: rgba(0,0,0,0.04); }
+
+  .tab.active {
+    background: var(--text);
+    color: white;
+  }
+
+  .tab.active .tab-num,
+  .tab.active .tab-date { color: white; }
+
+  /* DAY PANEL */
+  .day-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .day-panel.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .day-hero {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: var(--bg-soft);
+  }
+
+  .day-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7));
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    color: white;
+  }
+
+  .day-hero-info h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .day-hero-info span {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  .day-hero-pill {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.95);
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+  }
+
+  .day-body { padding: 32px; }
+
+  .blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .block {
+    padding: 18px;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .block:hover {
+    background: var(--bg-card);
+    border-color: var(--border);
+  }
+
+  .block-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .block-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 1px solid var(--border);
+  }
+
+  .block-time {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .block-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .block p {
+    font-size: 13.5px;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  .day-tip {
+    margin-top: 20px;
+    padding: 16px 18px;
+    background: var(--yellow-soft);
+    border-radius: var(--radius);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .day-tip-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--yellow);
+  }
+
+  .day-tip-content strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .day-tip-content p {
+    font-size: 13.5px;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  /* BUDGET */
+  .budget-wrap {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 24px;
+  }
+
+  .budget-list {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .budget-row {
+    display: grid;
+    grid-template-columns: 1fr 140px 40px;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+    transition: background 0.15s;
+  }
+
+  .budget-row:last-child { border-bottom: none; }
+  .budget-row:hover { background: var(--bg-soft); }
+
+  .budget-row-info h4 {
+    font-size: 14.5px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .budget-row-info p {
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+
+  .budget-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .budget-input-prefix {
+    position: absolute;
+    left: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  .budget-input {
+    width: 100%;
+    padding: 9px 12px 9px 32px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    background: white;
+    transition: all 0.15s;
+    text-align: right;
+  }
+
+  .budget-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  .budget-toggle {
+    width: 36px;
+    height: 20px;
+    background: var(--border-strong);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    transition: background 0.15s;
+    flex-shrink: 0;
+  }
+
+  .budget-toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  .budget-row.active .budget-toggle { background: var(--accent); }
+  .budget-row.active .budget-toggle::after { transform: translateX(16px); }
+  .budget-row:not(.active) { opacity: 0.5; }
+  .budget-row:not(.active) .budget-input { background: var(--bg-soft); }
+
+  /* BUDGET SUMMARY */
+  .budget-summary {
+    background: var(--text);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    position: sticky;
+    top: 80px;
+    align-self: start;
+  }
+
+  .budget-summary h3 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .budget-summary-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+  }
+
+  .budget-total {
+    font-family: 'Instrument Serif', serif;
+    font-size: 56px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .budget-total-currency {
+    font-size: 20px;
+    color: rgba(255,255,255,0.6);
+    margin-right: 4px;
+  }
+
+  .budget-total-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+  }
+
+  .budget-breakdown {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .budget-breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.5px;
+  }
+
+  .budget-breakdown-row span:first-child { color: rgba(255,255,255,0.7); }
+  .budget-breakdown-row span:last-child {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .budget-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .budget-btn {
+    flex: 1;
+    padding: 11px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .budget-btn:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  .budget-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .budget-btn.primary:hover {
+    background: var(--accent-deep);
+    border-color: var(--accent-deep);
+  }
+
+  /* TASKS */
+  .tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .task {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    display: flex;
+    gap: 14px;
+    transition: all 0.2s;
+  }
+
+  .task:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow);
+  }
+
+  .task-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--border-strong);
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .task-check:hover { border-color: var(--accent); }
+
+  .task.done .task-check {
+    background: var(--green);
+    border-color: var(--green);
+  }
+
+  .task.done .task-check::after {
+    content: '✓';
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .task.done .task-content h4,
+  .task.done .task-content p {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  .task-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .task-priority {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .priority-urgent { background: var(--accent-soft); color: var(--accent-deep); }
+  .priority-soon { background: var(--yellow-soft); color: #8a6e2c; }
+  .priority-later { background: var(--green-soft); color: var(--green); }
+
+  .task-content h4 {
+    font-size: 15.5px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .task-content p {
+    font-size: 13.5px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .task-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .task-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 7px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+
+  .task-btn:hover {
+    background: var(--text);
+    color: white;
+    border-color: var(--text);
+  }
+
+  /* HOSTELS */
+  .hostel-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hostel-tab {
+    padding: 12px 4px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin-right: 24px;
+    transition: all 0.15s;
+  }
+
+  .hostel-tab:hover { color: var(--text); }
+
+  .hostel-tab.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+
+  .hostel-panel { display: none; }
+  .hostel-panel.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    animation: fadeIn 0.25s ease;
+  }
+
+  .hostel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+
+  .hostel:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .hostel-img {
+    height: 180px;
+    background: linear-gradient(135deg, #d4d1ca 0%, #b8b3a8 100%);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hostel-rank {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .hostel-rank.first { color: var(--accent-deep); }
+  .hostel-rank.second { color: var(--blue); }
+
+  .hostel-body { padding: 22px; }
+
+  .hostel h4 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .hostel-loc {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+
+  .hostel p {
+    font-size: 13.5px;
+    color: var(--text-soft);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .hostel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .tag {
+    padding: 4px 10px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 11.5px;
+    color: var(--text-soft);
+    font-weight: 500;
+  }
+
+  .hostel-buttons { display: flex; gap: 8px; }
+
+  /* TIPS */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .tip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: all 0.2s;
+  }
+
+  .tip:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow);
+  }
+
+  .tip-icon-wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+
+  .tip-icon-wrap.red { background: var(--accent-soft); }
+  .tip-icon-wrap.blue { background: var(--blue-soft); }
+  .tip-icon-wrap.green { background: var(--green-soft); }
+  .tip-icon-wrap.yellow { background: var(--yellow-soft); }
+
+  .tip h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .tip ul { list-style: none; padding: 0; }
+
+  .tip li {
+    padding: 8px 0;
+    font-size: 13.5px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+  }
+
+  .tip li:last-child { border-bottom: none; }
+
+  .tip li::before {
+    content: '·';
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .tip li strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+    padding: 40px 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-inner { padding: 12px 20px; }
+    .header { padding: 50px 20px 40px; }
+    .facts { padding: 0 20px 40px; grid-template-columns: repeat(2, 1fr); }
+    .section { padding: 40px 20px; }
+    .blocks { grid-template-columns: 1fr; }
+    .budget-wrap { grid-template-columns: 1fr; }
+    .budget-summary { position: static; }
+    .budget-row { grid-template-columns: 1fr; gap: 8px; }
+    .tasks-grid, .hostel-panel.active, .tips-grid { grid-template-columns: 1fr !important; }
+    .day-body { padding: 20px; }
+    .day-hero { height: 180px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span class="nav-brand-dot"></span>
+      Peru <span style="color:var(--text-muted);">·</span> 13 dias
+    </div>
+    <div class="nav-links">
+      <a href="#roteiro">Roteiro</a>
+      <a href="#orcamento">Orçamento</a>
+      <a href="#compras">Compras</a>
+      <a href="#hostels">Hostels</a>
+      <a href="#dicas">Dicas</a>
+    </div>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="header-tag">
+    <span class="header-tag-dot"></span>
+    29 de setembro – 11 de outubro
+  </div>
+  <h1>Peru, <em>roots</em><br>e trilhas.</h1>
+  <p class="header-sub">Treze dias entre Lima e Cusco. Pisco sour em Barranco, Machu Picchu de manhã, festa de hostel até tarde. Tudo com orçamento mochileiro.</p>
+</header>
+
+<div class="facts">
+  <div class="fact">
+    <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <rect x="3" y="5" width="18" height="16" rx="2"/>
+      <path d="M3 9h18M8 3v4M16 3v4"/>
+    </svg>
+    <div class="fact-label">Período</div>
+    <div class="fact-value">13 dias</div>
+  </div>
+  <div class="fact">
+    <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <path d="M12 22s8-7 8-13a8 8 0 1 0-16 0c0 6 8 13 8 13z"/>
+      <circle cx="12" cy="9" r="2.5"/>
+    </svg>
+    <div class="fact-label">Cidades</div>
+    <div class="fact-value">Lima · Cusco</div>
+  </div>
+  <div class="fact">
+    <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+    </svg>
+    <div class="fact-label">Voos</div>
+    <div class="fact-value">3 trechos</div>
+  </div>
+  <div class="fact">
+    <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 6v6l4 2"/>
+    </svg>
+    <div class="fact-label">Estimativa</div>
+    <div class="fact-value">R$ 8.500</div>
+  </div>
+</div>
+
+<section class="section" id="roteiro">
+  <div class="section-head">
+    <div class="section-eyebrow">01 · Roteiro</div>
+    <h2 class="section-title">Dia a <em>dia</em></h2>
+    <p class="section-desc">Clique em cada dia pra ver o detalhe. Estrutura sugerida — flexível, principalmente em Cusco.</p>
+  </div>
+
+  <div class="tabs-wrap">
+    <div class="tabs" id="day-tabs">
+      <button class="tab active" data-day="1"><span class="tab-num">01</span><span class="tab-date">29 set</span></button>
+      <button class="tab" data-day="2"><span class="tab-num">02</span><span class="tab-date">30 set</span></button>
+      <button class="tab" data-day="3"><span class="tab-num">03</span><span class="tab-date">01 out</span></button>
+      <button class="tab" data-day="4"><span class="tab-num">04</span><span class="tab-date">02 out</span></button>
+      <button class="tab" data-day="5"><span class="tab-num">05</span><span class="tab-date">03 out</span></button>
+      <button class="tab" data-day="6"><span class="tab-num">06</span><span class="tab-date">04 out</span></button>
+      <button class="tab" data-day="7"><span class="tab-num">07</span><span class="tab-date">05 out</span></button>
+      <button class="tab" data-day="8"><span class="tab-num">08</span><span class="tab-date">06 out</span></button>
+      <button class="tab" data-day="9"><span class="tab-num">09</span><span class="tab-date">07 out</span></button>
+      <button class="tab" data-day="10"><span class="tab-num">10</span><span class="tab-date">08 out</span></button>
+      <button class="tab" data-day="11"><span class="tab-num">11</span><span class="tab-date">09 out</span></button>
+      <button class="tab" data-day="12"><span class="tab-num">12</span><span class="tab-date">10 out</span></button>
+      <button class="tab" data-day="13"><span class="tab-num">13</span><span class="tab-date">11 out</span></button>
+    </div>
+  </div>
+
+  <div id="day-panels">
+
+    <div class="day-panel active" data-day="1">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=1200&q=80')">
+          <span class="day-hero-pill">SP → Lima</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Voo de chegada e primeira ceviche</h3><span>Segunda · 29 de setembro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">✈️</div><span class="block-time">Manhã</span></div><div class="block-title">GRU → LIM</div><p>Voo direto (~5h30). Câmbio melhor em Lima — só o mínimo no aeroporto.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🚕</div><span class="block-time">Tarde</span></div><div class="block-title">Transfer pra Barranco</div><p>Uber ou táxi oficial até o hostel (~50min, S/ 70–90). Check-in e descanso.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🍸</div><span class="block-time">Noite</span></div><div class="block-title">Primeiro pisco sour</div><p>Jantar leve no Ayahuasca Bar — casarão histórico, vibe mochileira.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🎶</div><span class="block-time">Late</span></div><div class="block-title">Pub crawl Barranco</div><p>Kokopelli organiza pub crawl às quartas e sextas — boa pra fazer amizade.</p></div>
+          </div>
+          <div class="day-tip">
+            <svg class="day-tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <div class="day-tip-content"><strong>Dica de câmbio</strong><p>Saque em ATM (BCP cobra menos) ou use Wise/Nomad. Casas de câmbio do aeroporto têm taxa ruim.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="2">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=1200&q=80')">
+          <span class="day-hero-pill">Lima</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Centro Histórico e graffiti tour</h3><span>Terça · 30 de setembro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🏛️</div><span class="block-time">Manhã</span></div><div class="block-title">Centro Histórico</div><p>Plaza Mayor, Catedral, Convento de São Francisco e suas catacumbas.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🥪</div><span class="block-time">Almoço</span></div><div class="block-title">El Chinito</div><p>Sanduíche de chicharrón clássico no centro. Alternativa: Tanta (Gastón Acurio).</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🎨</div><span class="block-time">Tarde</span></div><div class="block-title">Free walking tour Barranco</div><p>Bairro boêmio com murais. A Puente de los Suspiros é o ponto clássico.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🐟</div><span class="block-time">Noite</span></div><div class="block-title">Ceviche + festa</div><p>Jantar no Canta Rana e depois Ayahuasca, Victoria Bar ou festa do hostel.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="3">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=1200&q=80')">
+          <span class="day-hero-pill">Lima</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Miraflores, costa e Larcomar</h3><span>Quarta · 01 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🌊</div><span class="block-time">Manhã</span></div><div class="block-title">Malecón de Miraflores</div><p>Caminhada pela orla. Parque del Amor, Parque Kennedy (cheio de gatos!).</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🐠</div><span class="block-time">Almoço</span></div><div class="block-title">La Mar (Acurio)</div><p>Cevicheria mais conceituada. Sem reserva, chegar 12h em ponto. Plano B: Punto Azul.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🪂</div><span class="block-time">Tarde</span></div><div class="block-title">Huaca Pucllana ou parapente</div><p>Pirâmide pré-inca no bairro chique. Ou parapente do Parque Raimondi (~S/ 250).</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🍽️</div><span class="block-time">Noite</span></div><div class="block-title">Última noite em Lima</div><p>Jantar em Isolina (cocina criolla casa de família) e despedida no hostel.</p></div>
+          </div>
+          <div class="day-tip">
+            <svg class="day-tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <div class="day-tip-content"><strong>Compra obrigatória</strong><p>Folhas de coca pra mascar em Cusco. Mercados de Surquillo ou supermercado Wong vendem.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="4">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=1200&q=80')">
+          <span class="day-hero-pill">Lima → Cusco</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Voo, altitude e aclimatação</h3><span>Quinta · 02 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🛬</div><span class="block-time">Manhã</span></div><div class="block-title">Voo LIM → CUZ</div><p>~1h20. Janela do lado esquerdo pra ver os Andes na descida. Cusco fica a 3.400m.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🍵</div><span class="block-time">Tarde</span></div><div class="block-title">Modo lento</div><p>Check-in, mate de coca, descansar. Sem álcool nem comida pesada nas primeiras 24h.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">⛪</div><span class="block-time">Final tarde</span></div><div class="block-title">Plaza de Armas</div><p>Caminhada leve pela praça mais bonita do Peru. Catedral iluminada ao entardecer.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🥣</div><span class="block-time">Noite</span></div><div class="block-title">Jantar leve</div><p>Sopa de quinoa + chá de coca. Resista à festa do hostel — amanhã sim.</p></div>
+          </div>
+          <div class="day-tip">
+            <svg class="day-tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+            <div class="day-tip-content"><strong>Atenção · Altitude</strong><p>Soroche é real. Hidrate muito, evite álcool 24h, coma leve. Sorojchi Pills vendem em farmácia.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="5">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1200&q=80')">
+          <span class="day-hero-pill">Cusco</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>City tour e mercado San Pedro</h3><span>Sexta · 03 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🚶</div><span class="block-time">Manhã</span></div><div class="block-title">Free walking tour</div><p>Saindo da Plaza de Armas. Catedral, Qoricancha, San Blas. ~3h, gorjeta de S/ 30–40.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🍲</div><span class="block-time">Almoço</span></div><div class="block-title">Mercado San Pedro</div><p>Caldo de gallina, sucos frescos. Almoço completo por S/ 10–15. Roots no talo.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🗿</div><span class="block-time">Tarde</span></div><div class="block-title">Sacsayhuamán</div><p>Ruínas megalíticas a 30 min subindo (ou táxi S/ 15). Pôr do sol absurdo.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🍻</div><span class="block-time">Noite</span></div><div class="block-title">Sexta no Loki</div><p>Bar do Loki é PT mochileira mundial. Pub crawl passa por Mama Africa e Mythology.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="6">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1568797629192-908b54e0f2d9?w=1200&q=80')">
+          <span class="day-hero-pill">Vale Sagrado</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Pisac, Ollantaytambo e Maras-Moray</h3><span>Sábado · 04 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🚐</div><span class="block-time">Dia inteiro</span></div><div class="block-title">Tour Vale Sagrado</div><p>Tour fechado em Cusco por S/ 60–80. Sai 8h, volta 18h. Pisac, Ollantaytambo, Chinchero.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🧂</div><span class="block-time">Alternativa</span></div><div class="block-title">Maras + Moray</div><p>Salinas de Maras e anfiteatro inca. Tour separado ou de quadriciclo (~S/ 180).</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🍛</div><span class="block-time">Almoço</span></div><div class="block-title">No vale</div><p>Buffet típico em Urubamba (~S/ 35) ou comida de mercado em Pisac. Cuy pra quem topa.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🛌</div><span class="block-time">Noite</span></div><div class="block-title">Volta pro hostel</div><p>Jantar no Pachapapa (forno a lenha). Recolhimento — amanhã é Machu Picchu.</p></div>
+          </div>
+          <div class="day-tip">
+            <svg class="day-tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>
+            <div class="day-tip-content"><strong>Boleto Turístico</strong><p>BTC integral (S/ 130) cobre 16 sítios. Vende-se na entrada de qualquer um deles.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="7">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=1200&q=80')">
+          <span class="day-hero-pill">Machu Picchu</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>O dia que tudo justifica</h3><span>Domingo · 05 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🚂</div><span class="block-time">Madrugada</span></div><div class="block-title">Trem pra Aguas Calientes</div><p>Sair ~4h30 → Ollantaytambo (transfer 1h30 + trem 1h45). PeruRail ou IncaRail.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🚌</div><span class="block-time">Manhã</span></div><div class="block-title">Subida e visita</div><p>Ônibus Consettur (30 min, ~US$ 24) ou trilha a pé (1h30). Circuito 2 é o clássico.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">♨️</div><span class="block-time">Tarde</span></div><div class="block-title">Aguas Calientes</div><p>Almoço, banhos termais (opcional), explorar a cidadezinha. Trem volta ~16–18h.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🌙</div><span class="block-time">Noite</span></div><div class="block-title">Volta a Cusco</div><p>Chegada ~22h. Jantar rápido e cama. Day trip puxado mas vale cada centavo.</p></div>
+          </div>
+          <div class="day-tip">
+            <svg class="day-tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div class="day-tip-content"><strong>Crítico · Comprar 4–6 meses antes</strong><p>Ingresso no tuboleto.cultura.pe + trem PeruRail/IncaRail. Circuito 2 esgota primeiro.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="8">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=1200&q=80')">
+          <span class="day-hero-pill">Cusco</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Recuperação e San Blas</h3><span>Segunda · 06 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">☕</div><span class="block-time">Manhã</span></div><div class="block-title">Café tranquilo</div><p>Three Monkeys, La Bondiet ou Jack's Cafe. Dormir até tarde sem culpa.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🎨</div><span class="block-time">Tarde</span></div><div class="block-title">San Blas a pé</div><p>Bairro dos artesãos, ladeiras, ateliês. Mercado menos turístico que o San Pedro.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🌅</div><span class="block-time">Final tarde</span></div><div class="block-title">Mirante San Cristóbal</div><p>Vista panorâmica de Cusco no pôr do sol. Subida puxada mas curta.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🥩</div><span class="block-time">Noite</span></div><div class="block-title">Jantar + bar</div><p>Cicciolina ou Chicha (Acurio). Depois Mythology ou Limbus Restobar (vista!).</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="9">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1543059080-f9b1272213d5?w=1200&q=80')">
+          <span class="day-hero-pill">Rainbow Mountain</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Vinicunca · a montanha de 7 cores</h3><span>Terça · 07 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🌄</div><span class="block-time">Madrugada</span></div><div class="block-title">Tour Rainbow Mountain</div><p>Saída 4h da manhã. Tour fechado S/ 60–90 com café, almoço e ingresso.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🥾</div><span class="block-time">Trilha</span></div><div class="block-title">Subida a 5.200m</div><p>2h de subida lenta. Cavalos disponíveis (~S/ 100) se a altitude apertar.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🏞️</div><span class="block-time">Alternativa</span></div><div class="block-title">Palccoyo</div><p>Versão mais tranquila (3 montanhas, menos altitude, sem multidão). Mesmo preço.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🍽️</div><span class="block-time">Noite</span></div><div class="block-title">Volta exausta</div><p>Chegada ~17h. Jantar no Nuna Raymi e cama cedo.</p></div>
+          </div>
+          <div class="day-tip">
+            <svg class="day-tip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+            <div class="day-tip-content"><strong>Aviso de altitude</strong><p>Rainbow Mountain a 5.200m é o ponto mais alto da viagem. Se sensível ao soroche, vai de Palccoyo.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="10">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1568797629192-908b54e0f2d9?w=1200&q=80')">
+          <span class="day-hero-pill">Cusco</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Dia livre e quente</h3><span>Quarta · 08 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🏛️</div><span class="block-time">Opção A</span></div><div class="block-title">South Valley</div><p>Tipón, Pikillacta, Andahuaylillas (a "capela sistina das Américas").</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">💎</div><span class="block-time">Opção B</span></div><div class="block-title">Humantay Lagoon</div><p>Day trip pra lagoa turquesa entre montanhas (4.200m). Trilha de 1h30. ~S/ 80.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">📚</div><span class="block-time">Opção C</span></div><div class="block-title">Roots day</div><p>Ficar em Cusco, almoço longo, café com livro. Recarregar.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🎉</div><span class="block-time">Noite</span></div><div class="block-title">Despedida do hostel</div><p>Quarta no Loki = ladies night / pub crawl. Boa pra fazer amizade.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="11">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1200&q=80')">
+          <span class="day-hero-pill">Cusco</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Cocina, mercado e workshop</h3><span>Quinta · 09 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">👨‍🍳</div><span class="block-time">Manhã</span></div><div class="block-title">Cooking class</div><p>Aulas de culinária peruana (~S/ 150). Marcelo Batata e Cusco Cooking são referência.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🛍️</div><span class="block-time">Tarde</span></div><div class="block-title">Compras roots</div><p>Mercado de San Pedro (alpaca, chullos). Negocie 30–40% do preço inicial.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">☕</div><span class="block-time">Final tarde</span></div><div class="block-title">Café final</div><p>L'Atelier Café-Concept ou Museo del Café — torrefações locais.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🍹</div><span class="block-time">Noite</span></div><div class="block-title">Última festa séria</div><p>Mythology, Mushrooms, Mama Africa funcionam até 4h. Última oportunidade.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="12">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=1200&q=80')">
+          <span class="day-hero-pill">Cusco</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Último dia solto</h3><span>Sexta · 10 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">😴</div><span class="block-time">Manhã</span></div><div class="block-title">Coletivos finais</div><p>Ressaca tranquila. Rever um lugar favorito. Visitar Qoricancha com calma.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🏛️</div><span class="block-time">Tarde</span></div><div class="block-title">Museu Inca</div><p>Pequeno, denso, perto da Plaza de Armas. Contextualiza tudo. S/ 20.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🌇</div><span class="block-time">Final tarde</span></div><div class="block-title">Despedida da cidade</div><p>Pôr do sol no mirante de San Cristóbal. Pisco sour final no Limbus.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🥩</div><span class="block-time">Noite</span></div><div class="block-title">Jantar especial</div><p>MAP Café (dentro de museu) ou Uchu Steakhouse (alpaca grelhada na pedra).</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" data-day="13">
+      <div class="day-card">
+        <div class="day-hero" style="background-image:url('https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=1200&q=80')">
+          <span class="day-hero-pill">Cusco → SP</span>
+          <div class="day-hero-overlay"><div class="day-hero-info"><h3>Voo direto pra casa</h3><span>Sábado · 11 de outubro</span></div></div>
+        </div>
+        <div class="day-body">
+          <div class="blocks">
+            <div class="block"><div class="block-head"><div class="block-icon">🧳</div><span class="block-time">Manhã</span></div><div class="block-title">Check-out + transfer</div><p>Aeroporto fica a 15 min do centro (S/ 25 de Uber). Chegue 2h antes.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">✈️</div><span class="block-time">Voo</span></div><div class="block-title">CUZ → GRU</div><p>Provavelmente conexão (Lima ou Bogotá). ~10–14h total dependendo da combinação.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🎁</div><span class="block-time">Pendente</span></div><div class="block-title">Lembranças</div><p>Folha de coca não pode entrar no Brasil. Pisco sim. Charango, chullo, café OK.</p></div>
+            <div class="block"><div class="block-head"><div class="block-icon">🏠</div><span class="block-time">Chegada</span></div><div class="block-title">São Paulo</div><p>Noite de sábado ou madrugada. Ressaca andina dura 3 dias, saudade dura meses.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="orcamento">
+  <div class="section-head">
+    <div class="section-eyebrow">02 · Orçamento</div>
+    <h2 class="section-title">Calculadora <em>editável</em></h2>
+    <p class="section-desc">Edite os valores e desligue itens que não vai usar. O total atualiza em tempo real.</p>
+  </div>
+
+  <div class="budget-wrap">
+    <div class="budget-list" id="budget-list">
+      <div class="budget-row active" data-cat="passagens">
+        <div class="budget-row-info"><h4>Voo SP → Lima</h4><p>Já encontrado · LATAM/Sky/Gol</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="836"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="passagens">
+        <div class="budget-row-info"><h4>Voo Lima → Cusco</h4><p>Já encontrado</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="290"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="passagens">
+        <div class="budget-row-info"><h4>Voo Cusco → SP</h4><p>Já encontrado · com conexão</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="1280"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="hospedagem">
+        <div class="budget-row-info"><h4>Hostels (10 noites)</h4><p>Lima 3 + Cusco 7 · dorm misto</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="1000"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="passeios">
+        <div class="budget-row-info"><h4>Machu Picchu (combo)</h4><p>Ingresso + trem + ônibus Consettur</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="1250"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="passeios">
+        <div class="budget-row-info"><h4>Tours em Cusco</h4><p>Vale Sagrado + Rainbow + extra</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="500"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="passeios">
+        <div class="budget-row-info"><h4>Boleto Turístico Cusco</h4><p>Integral · cobre 16 sítios</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="190"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="alimentacao">
+        <div class="budget-row-info"><h4>Alimentação</h4><p>~R$ 100/dia · mercado + restaurante</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="1300"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="alimentacao">
+        <div class="budget-row-info"><h4>Festas, drinks, pub crawl</h4><p>Pisco sour · Cusqueña · noite</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="500"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="extras">
+        <div class="budget-row-info"><h4>Transporte local</h4><p>Ubers, transfers, ônibus</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="250"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="extras">
+        <div class="budget-row-info"><h4>Seguro viagem</h4><p>13 dias · cobertura América Latina</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="110"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+      <div class="budget-row active" data-cat="extras">
+        <div class="budget-row-info"><h4>Reserva de emergência</h4><p>Imprevistos, remédio, atrasos</p></div>
+        <div class="budget-input-wrap"><span class="budget-input-prefix">R$</span><input type="number" class="budget-input" value="600"></div>
+        <button class="budget-toggle" aria-label="Toggle"></button>
+      </div>
+    </div>
+
+    <div class="budget-summary">
+      <h3>Total estimado</h3>
+      <p class="budget-summary-sub">Por pessoa</p>
+      <div class="budget-total"><span class="budget-total-currency">R$</span><span id="budget-total">8.106</span></div>
+      <p class="budget-total-label">para 13 dias no Peru</p>
+      <div class="budget-breakdown">
+        <div class="budget-breakdown-row"><span>Passagens</span><span id="cat-passagens">R$ 2.406</span></div>
+        <div class="budget-breakdown-row"><span>Hospedagem</span><span id="cat-hospedagem">R$ 1.000</span></div>
+        <div class="budget-breakdown-row"><span>Passeios</span><span id="cat-passeios">R$ 1.940</span></div>
+        <div class="budget-breakdown-row"><span>Alimentação</span><span id="cat-alimentacao">R$ 1.800</span></div>
+        <div class="budget-breakdown-row"><span>Extras</span><span id="cat-extras">R$ 960</span></div>
+      </div>
+      <div class="budget-actions">
+        <button class="budget-btn" onclick="resetBudget()">Resetar</button>
+        <button class="budget-btn primary" onclick="copyBudget(event)">Copiar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="compras">
+  <div class="section-head">
+    <div class="section-eyebrow">03 · Compras antecipadas</div>
+    <h2 class="section-title">Lista de <em>tarefas</em></h2>
+    <p class="section-desc">Marque cada item conforme for fechando. Os 3 primeiros são críticos — cada semana que passa o preço sobe ou esgota.</p>
+  </div>
+
+  <div class="tasks-grid" id="tasks-grid">
+    <div class="task" data-task="1">
+      <div class="task-check"></div>
+      <div class="task-content">
+        <span class="task-priority priority-urgent">Urgência alta</span>
+        <h4>Ingresso Machu Picchu</h4>
+        <p>Comprar pelo site oficial. Aceita Visa/Mastercard com Verified by Visa. Escolha Circuito 2 — clássico, esgota primeiro.</p>
+        <div class="task-buttons">
+          <a href="https://tuboleto.cultura.pe" target="_blank" rel="noopener" class="task-btn">tuboleto.cultura.pe ↗</a>
+          <a href="https://www.machupicchu.gob.pe/online-tickets/?lang=en" target="_blank" rel="noopener" class="task-btn">Site oficial ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="task" data-task="2">
+      <div class="task-check"></div>
+      <div class="task-content">
+        <span class="task-priority priority-urgent">Urgência alta</span>
+        <h4>Trem para Aguas Calientes</h4>
+        <p>PeruRail (mais tradicional) ou IncaRail (mais barato). Categoria básica é suficiente. Sair de Ollantaytambo.</p>
+        <div class="task-buttons">
+          <a href="https://www.perurail.com" target="_blank" rel="noopener" class="task-btn">perurail.com ↗</a>
+          <a href="https://incarail.com" target="_blank" rel="noopener" class="task-btn">incarail.com ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="task" data-task="3">
+      <div class="task-check"></div>
+      <div class="task-content">
+        <span class="task-priority priority-urgent">Urgência alta</span>
+        <h4>Passagens aéreas</h4>
+        <p>SP→Lima R$ 836 e Cusco→SP R$ 1.280 são preços bons — trave AGORA. Compare em Google Flights e Kiwi.</p>
+        <div class="task-buttons">
+          <a href="https://www.google.com/flights" target="_blank" rel="noopener" class="task-btn">Google Flights ↗</a>
+          <a href="https://www.kiwi.com" target="_blank" rel="noopener" class="task-btn">Kiwi ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="task" data-task="4">
+      <div class="task-check"></div>
+      <div class="task-content">
+        <span class="task-priority priority-soon">Reservar até julho</span>
+        <h4>Hostels Lima e Cusco</h4>
+        <p>Loki e Wild Rover lotam em outubro. Cancelamento gratuito até 48h é padrão. Pague depósito pequeno.</p>
+        <div class="task-buttons">
+          <a href="https://www.hostelworld.com" target="_blank" rel="noopener" class="task-btn">Hostelworld ↗</a>
+          <a href="https://www.booking.com" target="_blank" rel="noopener" class="task-btn">Booking ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="task" data-task="5">
+      <div class="task-check"></div>
+      <div class="task-content">
+        <span class="task-priority priority-soon">Antes de embarcar</span>
+        <h4>Seguro viagem</h4>
+        <p>Cobertura mínima de US$ 30k médico + cancelamento de voo. Inclua esportes/aventura para Rainbow Mountain.</p>
+        <div class="task-buttons">
+          <a href="https://www.seguros.promo" target="_blank" rel="noopener" class="task-btn">Seguros Promo ↗</a>
+          <a href="https://safetywing.com" target="_blank" rel="noopener" class="task-btn">SafetyWing ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="task" data-task="6">
+      <div class="task-check"></div>
+      <div class="task-content">
+        <span class="task-priority priority-later">Pode esperar</span>
+        <h4>Ônibus Consettur</h4>
+        <p>Sobe de Aguas Calientes a Machu Picchu (US$ 24 ida e volta). Dá pra comprar online ou no guichê na véspera.</p>
+        <div class="task-buttons">
+          <a href="https://www.consettur.com" target="_blank" rel="noopener" class="task-btn">consettur.com ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="hostels">
+  <div class="section-head">
+    <div class="section-eyebrow">04 · Hostels</div>
+    <h2 class="section-title">Onde <em>dormir</em></h2>
+    <p class="section-desc">Selecionados com critério mochileiro: festa, gente, localização. Plano A e plano B em cada cidade.</p>
+  </div>
+
+  <div class="hostel-tabs" id="hostel-tabs">
+    <button class="hostel-tab active" data-city="lima">Lima · 3 noites</button>
+    <button class="hostel-tab" data-city="cusco">Cusco · 7 noites</button>
+  </div>
+
+  <div class="hostel-panel active" data-city="lima">
+    <div class="hostel">
+      <div class="hostel-img" style="background-image:url('https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&q=80')">
+        <span class="hostel-rank first">★ Plano A</span>
+      </div>
+      <div class="hostel-body">
+        <h4>Viajero Kokopelli Barranco</h4>
+        <div class="hostel-loc">📍 Barranco · Lima</div>
+        <p>Um dos hostels mais icônicos da América do Sul. Bar interno com pub crawl quase toda noite, casarão histórico azul, piscina pequena. Vibe puro mochileiro internacional.</p>
+        <div class="hostel-tags">
+          <span class="tag">Festa</span><span class="tag">Pub crawl</span><span class="tag">Bar interno</span><span class="tag">Piscina</span><span class="tag">Casarão histórico</span>
+        </div>
+        <div class="hostel-buttons">
+          <a href="https://www.kokopellihostel.com/lima" target="_blank" rel="noopener" class="task-btn">Site oficial ↗</a>
+          <a href="https://www.instagram.com/kokopellihostels/" target="_blank" rel="noopener" class="task-btn">Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="hostel">
+      <div class="hostel-img" style="background-image:url('https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=800&q=80')">
+        <span class="hostel-rank second">Plano B</span>
+      </div>
+      <div class="hostel-body">
+        <h4>Pariwana Miraflores</h4>
+        <div class="hostel-loc">📍 Miraflores · Lima</div>
+        <p>Mais estruturado que o Kokopelli. Pátio grande, café da manhã decente. Localização excelente perto do Parque Kennedy e do malecón. Boa pra quem prioriza segurança.</p>
+        <div class="hostel-tags">
+          <span class="tag">Estruturado</span><span class="tag">Pátio</span><span class="tag">Café da manhã</span><span class="tag">Localização</span>
+        </div>
+        <div class="hostel-buttons">
+          <a href="https://www.pariwana-hostel.com/lima/" target="_blank" rel="noopener" class="task-btn">Site oficial ↗</a>
+          <a href="https://www.instagram.com/pariwanahostel/" target="_blank" rel="noopener" class="task-btn">Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hostel-panel" data-city="cusco">
+    <div class="hostel">
+      <div class="hostel-img" style="background-image:url('https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&q=80')">
+        <span class="hostel-rank first">★ Plano A</span>
+      </div>
+      <div class="hostel-body">
+        <h4>Loki Cusco</h4>
+        <div class="hostel-loc">📍 San Cristóbal · Cusco</div>
+        <p>Convento colonial de 450 anos transformado em hostel-festa lendário. Bar com vista 360° de Cusco, pub crawl quase toda noite, ladies night, theme parties. Subida puxada — já te aclimata.</p>
+        <div class="hostel-tags">
+          <span class="tag">Festa pesada</span><span class="tag">Vista panorâmica</span><span class="tag">Bar próprio</span><span class="tag">Convento</span><span class="tag">Mochileiro internacional</span>
+        </div>
+        <div class="hostel-buttons">
+          <a href="https://www.lokihostel.com/en/cusco/" target="_blank" rel="noopener" class="task-btn">Site oficial ↗</a>
+          <a href="https://www.instagram.com/lokihostels/" target="_blank" rel="noopener" class="task-btn">Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="hostel">
+      <div class="hostel-img" style="background-image:url('https://images.unsplash.com/photo-1568797629192-908b54e0f2d9?w=800&q=80')">
+        <span class="hostel-rank second">Plano B</span>
+      </div>
+      <div class="hostel-body">
+        <h4>Wild Rover Cusco</h4>
+        <div class="hostel-loc">📍 Centro · Cusco</div>
+        <p>Rival direto do Loki — vibe mais irlandesa-britânica, pub que serve comida o dia todo, theme parties pesadas. Localização mais central que o Loki. Galera misturada de todo lugar.</p>
+        <div class="hostel-tags">
+          <span class="tag">Festa</span><span class="tag">Pub irlandês</span><span class="tag">Theme parties</span><span class="tag">Comida pub</span><span class="tag">Centro</span>
+        </div>
+        <div class="hostel-buttons">
+          <a href="https://wildroverhostels.com/cusco/" target="_blank" rel="noopener" class="task-btn">Site oficial ↗</a>
+          <a href="https://www.instagram.com/wildroverhostels/" target="_blank" rel="noopener" class="task-btn">Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dicas">
+  <div class="section-head">
+    <div class="section-eyebrow">05 · Dicas essenciais</div>
+    <h2 class="section-title">Antes de <em>embarcar</em></h2>
+    <p class="section-desc">As coisas que separam viagem boa de viagem ótima no Peru.</p>
+  </div>
+
+  <div class="tips-grid">
+    <div class="tip">
+      <div class="tip-icon-wrap red">⛰️</div>
+      <h4>Altitude · 3.400m</h4>
+      <ul>
+        <li><strong>Aclimatize 24–48h</strong> antes de qualquer trilha</li>
+        <li><strong>Hidrate 3L/dia</strong> + chá de coca à vontade</li>
+        <li><strong>Sorojchi Pills</strong> em qualquer farmácia</li>
+        <li><strong>Sintomas:</strong> dor de cabeça, náusea, falta de ar</li>
+        <li>Folha de coca legal — mascar, não engolir</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <div class="tip-icon-wrap blue">☁️</div>
+      <h4>Clima · set/out</h4>
+      <ul>
+        <li><strong>Lima:</strong> 16–22°C com garúa</li>
+        <li><strong>Cusco:</strong> 0–20°C, seca, ideal pra Machu Picchu</li>
+        <li><strong>Camadas:</strong> camiseta + fleece + corta-vento</li>
+        <li><strong>FPS 50</strong> obrigatório — sol andino é forte</li>
+        <li>Capa de chuva fina pra Machu Picchu</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <div class="tip-icon-wrap green">🛡️</div>
+      <h4>Segurança</h4>
+      <ul>
+        <li><strong>Lima:</strong> só Uber à noite. Centro à noite, não</li>
+        <li><strong>Cusco:</strong> bem mais tranquilo, mas atenção em festa</li>
+        <li><strong>Furto rápido</strong> é o crime principal</li>
+        <li>Divida dinheiro em 3 lugares diferentes</li>
+        <li>Documento original no hostel, cópia na rua</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <div class="tip-icon-wrap yellow">🚐</div>
+      <h4>Transporte</h4>
+      <ul>
+        <li><strong>Uber e Cabify</strong> funcionam em Lima e Cusco</li>
+        <li><strong>Ollantaytambo:</strong> coletivo S/ 15 (1h45)</li>
+        <li><strong>Trem:</strong> embarque em Ollantaytambo, não Poroy</li>
+        <li>Passaporte original sempre — exigem no trem</li>
+        <li>Volta de Aguas Calientes ideal: 16h–18h</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <div class="tip-icon-wrap red">📄</div>
+      <h4>Documentos · grana</h4>
+      <ul>
+        <li><strong>Passaporte 6 meses</strong> de validade mínima</li>
+        <li>Brasileiro <strong>não precisa de visto</strong> (até 183 dias)</li>
+        <li>1 USD ≈ 3,7 PEN · use ATM BCP/Interbank</li>
+        <li><strong>Wise/Nomad</strong> são as melhores opções</li>
+        <li>Sempre uns S/ 100 em sóis pequenos no bolso</li>
+      </ul>
+    </div>
+    <div class="tip">
+      <div class="tip-icon-wrap green">🍽️</div>
+      <h4>Comida imperdível</h4>
+      <ul>
+        <li><strong>Ceviche:</strong> só de manhã/almoço, peixe fresco</li>
+        <li><strong>Lomo saltado:</strong> wok andino-chinês clássico</li>
+        <li><strong>Aji de gallina:</strong> comfort food peruano</li>
+        <li><strong>Cuy:</strong> porquinho-da-índia, cerimonial</li>
+        <li><strong>Pisco sour:</strong> drink nacional — cuidado na altitude</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Roteiro Peru · 13 dias · Buen viaje, hermano
+</footer>
+
+<script>
+  // TABS DOS DIAS
+  const dayTabs = document.querySelectorAll('#day-tabs .tab');
+  const dayPanels = document.querySelectorAll('.day-panel');
+  dayTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const day = tab.dataset.day;
+      dayTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      dayPanels.forEach(p => p.classList.remove('active'));
+      document.querySelector(`.day-panel[data-day="${day}"]`).classList.add('active');
+    });
+  });
+
+  // HOSTEL TABS
+  const hostelTabs = document.querySelectorAll('#hostel-tabs .hostel-tab');
+  const hostelPanels = document.querySelectorAll('.hostel-panel');
+  hostelTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const city = tab.dataset.city;
+      hostelTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      hostelPanels.forEach(p => p.classList.remove('active'));
+      document.querySelector(`.hostel-panel[data-city="${city}"]`).classList.add('active');
+    });
+  });
+
+  // CHECKLIST
+  document.querySelectorAll('.task').forEach(task => {
+    task.querySelector('.task-check').addEventListener('click', () => {
+      task.classList.toggle('done');
+    });
+  });
+
+  // ORÇAMENTO
+  const budgetRows = document.querySelectorAll('.budget-row');
+  const initialValues = Array.from(document.querySelectorAll('.budget-input')).map(i => i.value);
+
+  function formatBRL(num) {
+    return num.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  }
+
+  function updateBudget() {
+    const totals = { passagens: 0, hospedagem: 0, passeios: 0, alimentacao: 0, extras: 0 };
+    let grandTotal = 0;
+    budgetRows.forEach(row => {
+      if (row.classList.contains('active')) {
+        const cat = row.dataset.cat;
+        const val = parseFloat(row.querySelector('.budget-input').value) || 0;
+        totals[cat] = (totals[cat] || 0) + val;
+        grandTotal += val;
+      }
+    });
+    document.getElementById('budget-total').textContent = formatBRL(grandTotal);
+    Object.keys(totals).forEach(cat => {
+      const el = document.getElementById('cat-' + cat);
+      if (el) el.textContent = 'R$ ' + formatBRL(totals[cat]);
+    });
+  }
+
+  budgetRows.forEach(row => {
+    row.querySelector('.budget-toggle').addEventListener('click', () => {
+      row.classList.toggle('active');
+      updateBudget();
+    });
+    row.querySelector('.budget-input').addEventListener('input', updateBudget);
+  });
+
+  function resetBudget() {
+    document.querySelectorAll('.budget-input').forEach((input, i) => {
+      input.value = initialValues[i];
+    });
+    budgetRows.forEach(r => r.classList.add('active'));
+    updateBudget();
+  }
+
+  function copyBudget(event) {
+    let text = 'Orçamento Peru · 13 dias\n\n';
+    budgetRows.forEach(row => {
+      if (row.classList.contains('active')) {
+        const name = row.querySelector('h4').textContent;
+        const val = row.querySelector('.budget-input').value;
+        text += `${name}: R$ ${val}\n`;
+      }
+    });
+    text += `\nTotal: R$ ${document.getElementById('budget-total').textContent}`;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = event.target;
+      const original = btn.textContent;
+      btn.textContent = 'Copiado!';
+      setTimeout(() => btn.textContent = original, 1500);
+    });
+  }
+
+  updateBudget();
+</script>
+
+</body>
+</html>
